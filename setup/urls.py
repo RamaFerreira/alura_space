@@ -14,9 +14,16 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+
+'''
+Primeiro passo: impoortar a view criada no app
+Segundo passo: Adicionar uma rota para essa view chamando a função
+'''
+
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', include('galeria.urls')),
 ]
